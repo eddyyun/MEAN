@@ -26,8 +26,8 @@
       <file leaf-file-name="ps4.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/ps4.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="38" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
+            <state>
+              <caret selection-end-line="26" />
             </state>
           </provider>
         </entry>
@@ -174,12 +174,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1572377842750</updated>
-      <workItem from="1572377844174" duration="3776000" />
+      <workItem from="1572377844174" duration="3934000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3776000" />
+    <option name="totallyTimeSpent" value="3934000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="16" y="65" width="1400" height="791" extended-state="0" />
@@ -251,8 +251,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/ps4.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="38" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
+        <state>
+          <caret selection-end-line="26" />
         </state>
       </provider>
     </entry>
