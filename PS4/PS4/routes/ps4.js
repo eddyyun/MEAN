@@ -1,19 +1,29 @@
 const express = require('express');
 const router = express.Router();
 const request =  require('request');
-const mongoose = require('mongoose');
+
+//const mongoose = require('mongoose');
 
 /* setting up mongo with mongoose */
-let db = mongoose.connection;
+// db.connect((err, client) => {
+//     if (err) {
+//         console.log(`ERR: ${err}`);
+//     } else {
+//         console.log(`Connected`);
+//     }
+// });
 
-mongoose.connect('mongodb://localhost:27017/ps6app', {useNewUrlParser: true});
+// mongoose.connect('mongodb://localhost:27017/ps6app', {useNewUrlParser: true});
+//
+// let apiSchema = new mongoose.Schema({
+//     name: String,
+//     response: String
+// });
+// // let apiSchema = db.getDB();
+//
+// let apiQuote = mongoose.model('apiQuote', apiSchema);
 
-let apiSchema = new mongoose.Schema({
-    name: String,
-    response: String
-});
-
-let apiQuote = mongoose.model('apiQuote', apiSchema);
+let apiQuote = require('../mongo/mongo.js');
 
 /* GET home page. */
 router.get('/', function(req, res) {
@@ -48,11 +58,6 @@ router.get('/', function(req, res) {
         }
     })
 });
-// https.get('https://api.kanye.rest', (resp) => {
-//     resp.on('end', () => {
-//         let apicall = JSON.parse(end);
-//     });
-// });
-//
+
 
 module.exports = router;
