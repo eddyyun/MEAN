@@ -1,0 +1,12 @@
+<p>Display Component</p>
+<div *ngIf="selectedQuote">
+
+  <ul>
+
+    <li *ngFor="let quote of selectedQuote">
+      <label>Name: {{quote.name}}</label> <br/>
+      <label>Quote: "{{quote.response}}" </label> <br/>
+    </li>
+
+  </ul>
+</div>

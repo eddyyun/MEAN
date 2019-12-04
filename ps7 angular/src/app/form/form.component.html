@@ -1,0 +1,17 @@
+<p> Form Component</p>
+<form [formGroup]="apiFormGroup" (ngSubmit)="onSubmit()">
+
+  <label>Input Term:
+    <input type="text" formControlName="input_term" >
+  </label>
+
+
+  <button (click)="sendMessage()" type="submit" [disabled]="!apiFormGroup.valid">Query</button>
+
+  <!--<button type="submit" >Query</button>-->
+
+  <div *ngIf="apiFormGroup.get('input_term').errors">
+    Error: Can not query! Input Term is required and must be longer than 1 character!
+  </div>
+
+</form>
