@@ -1,29 +1,25 @@
 const express = require('express');
 const router = express.Router();
 const request =  require('request');
-
-//const mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
 /* setting up mongo with mongoose */
-// db.connect((err, client) => {
-//     if (err) {
-//         console.log(`ERR: ${err}`);
-//     } else {
-//         console.log(`Connected`);
-//     }
-// });
+let db = mongoose.connection;
 
-// mongoose.connect('mongodb://localhost:27017/ps6app', {useNewUrlParser: true});
-//
-// let apiSchema = new mongoose.Schema({
-//     name: String,
-//     response: String
-// });
-// // let apiSchema = db.getDB();
-//
-// let apiQuote = mongoose.model('apiQuote', apiSchema);
+mongoose.connect('mongodb://localhost:27017/ps6app', {useNewUrlParser: true});
 
-let apiQuote = require('../mongo/mongo.js');
+let apiSchema = new mongoose.Schema({
+    name: String,
+    response: String
+});
+
+let apiQuote = mongoose.model('apiQuote', apiSchema);
+
+
+router.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    next();
+});
 
 /* GET home page. */
 router.get('/', function(req, res) {
@@ -39,7 +35,8 @@ router.get('/', function(req, res) {
                     apiQuote.findOne({name: "kanye"}, {'_id':0, 'response': 1}, function(err, kquote){
                         //console.log("kquote" + kquote)
                         let ycache = "yes";
-                        res.render('ps4', {quote: kquote.response, cache: ycache})
+                        //res.render('ps4', {quote: kquote.response, cache: ycache})
+                        res.send([{name: "kanye", response: kquote.response},{name: "kanye", response: kquote.response}])
                     });
                 }
                 else{
@@ -58,6 +55,11 @@ router.get('/', function(req, res) {
         }
     })
 });
-
+// https.get('https://api.kanye.rest', (resp) => {
+//     resp.on('end', () => {
+//         let apicall = JSON.parse(end);
+//     });
+// });
+//
 
 module.exports = router;
