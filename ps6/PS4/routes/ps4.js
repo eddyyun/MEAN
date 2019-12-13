@@ -46,7 +46,7 @@ router.get('/', function(req, res) {
                        });
                     let ncache = "no";
                     //res.render('ps4', {quote: body.quote, cache: ncache});
-                    res.send([{name: "kanye", response: kquote.response},{name: "kanye", response: kquote.response}])
+                    res.send([{name: "kanye", response: body.quote},{name: "kanye", response: body.quote}])
                 }
             });
 
